@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="video-bg">
+        <video width="100%" height="auto" preload="auto" autoplay="autoplay"
+        loop="loop" poster="img/bg1_1.jpg">
+            <source src="video/Pexels Videos 4703.mp4" type="video/mp4"></source>
+            <!-- <source src="bg/daisy-stock-webm-video.webm" type="video/webm"></source> -->
+        </video>
+    </div>
+    <header id="header">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-4">
+                    <div class="header__logo">
+                        <a href="https://openweathermap.org/" target="_blank"><img src="img/logo.png" alt="Логотип"></a>
+                        <span>Weather</span>
+                    </div>
+                </div>
+                <!-- /.col-sm-6 -->
+                <div class="col-lg-6 header-menu">
+                    <div class="header__country">
+                        <!-- <label for="">Страна:</label> -->
+                        <select id="country-change">
+                            <option disabled >Выбирите страну</option>
+                            <option selected  value="UA" >Украина</option>
+                            <option value="BY">Беларусь</option>
+                            <option value="RU">Россия</option>
+                            <option value="TR">Турция</option>
+                            <option value="EG">Египет</option>
+                            <option value="TN">Тунис</option>
+                            <option value="AT">Австрия</option>
+                            <option value="HU">Венгрия</option>
+                            <option value="PL">Польша</option>
+                            <option value="MD">Молдавия</option>
+                            <option value="RO">Румыния</option>
+                            <option value="CZ">Чешская Республика</option>
+                            <option value="HR">Хорватия</option>
+                            <option value="FR">Франция</option>
+                            <option value="MV">Мальдивы</option>
+                            <option value="MT">Мальта</option>
+                        </select>
+                    </div>
+                    <div class="header__city">
+                        <!-- <label for="city">Город:</label> -->
+                        <select id="city">
+                            <option selected value="616743">Kharkiv</option>
+                            <option value="702550">Lviv</option>
+                            <option value="699942">Nizhyn</option>
+                            <option value="697889">Pavlohrad</option>
+                            <option value="695594">Rivne</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- /.col-sm-6 -->
+            </div>
+        </div>
+    </header>
+
+    <section id="main">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-12">
+                    <h2 class="location"><span class="location__counrty">Украина</span>, <span class="location__city">Kharkiv</span></h2>
+                </div>
+                <div class="col-12">
+                    <div class="tabs-days">
+                        <div id="tabs">
+                            <ul>
+                                <li><a href="#tabs-1">Сегодня</a></li>
+                                <li><a href="#tabs-2">3 дня</a></li>
+                                <li><a href="#tabs-3">5 дней</a></li>
+                            </ul>
+                            <div id="tabs-1">
+                                <ul class="tabs-2-menu">
+                                    <li><a class="tabs-2__link" id="tabs-0-link" href="#tabs-0">
+                                        <div class="tabs-2__date">
+                                            <span class="tabs-2-menu__time1">06 августа</span>
+                                        </div>
+                                        <div class="tabs-2-weather">
+                                            <div class="tabs-2-weather__icon">
+                                                <img src="#" class="ow-icon"></img>
+                                                <p><span>25</span> C</p>
+                                            </div>
+                                            <div class="tabs-2-weather__options">
+                                                <p class="tabs-2-weather__pressure">Давление: <span>255</span>мм.</p>
+                                                <p class="tabs-2-weather__temp">Влажность: <span>68</span> %</p>
+                                                <p class="tabs-2-weather__wind">Ветер: <span>35</span> м/с</p>
+                                                <p class="tabs-2-weather__main">Осадки: <span>дождь</span></p>
+                                            </div>
+                                        </div>
+                                        <!-- tabs-2-weather -->
+                                    </a></li>
+                                </ul>
+                                <div id="tabs-0">
+                                    <p class="tabs-active-city">KHARKIV <span></span></p>
+                                    <table id="tabs-0_table">
+                                        <tr>
+                                            <th></th>
+                                            <td class="tabs-0_table_time1">04:00</td>
+                                            <td class="tabs-0_table_time2">08:00</td>
+                                            <td class="tabs-0_table_time3">12:00</td>
+                                            <td class="tabs-0_table_time4">16:00</td>
+                                            <td class="tabs-0_table_time5">20:00</td>
+                                            <td class="tabs-0_table_time6">24:00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Туманность</th>
+                                            <td class="tabs-0_table_icon1">
+                                                <img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon2"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon3"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon4"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon5"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon6"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Температура, С</th>
+                                            <td class="tabs-0_table_temp1">25</td>
+                                            <td class="tabs-0_table_temp2">24</td>
+                                            <td class="tabs-0_table_temp3">23</td>
+                                            <td class="tabs-0_table_temp4">25</td>
+                                            <td class="tabs-0_table_temp5">26</td>
+                                            <td class="tabs-0_table_temp6">22</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Ветер, м/с</th>
+                                            <td class="tabs-0_table_wind1">2</td>
+                                            <td class="tabs-0_table_wind2">3</td>
+                                            <td class="tabs-0_table_wind3">4</td>
+                                            <td class="tabs-0_table_wind4">11</td>
+                                            <td class="tabs-0_table_wind5">5</td>
+                                            <td class="tabs-0_table_wind6">2</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                            </div>
+                            <div id="tabs-2">
+                                <ul class="tabs-2-menu">
+                                    <li><a class="tabs-2__link" id="tabs-4-link" href="#tabs-4">
+                                        <div class="tabs-2__date">
+                                            <span class="tabs-2-menu__time1">06 августа</span>
+                                        </div>
+                                        <div class="tabs-2-weather">
+                                            <div class="tabs-2-weather__icon">
+                                                <img src="#" class="ow-icon"></img>
+                                                <p><span>25</span> C</p>
+                                            </div>
+                                            <div class="tabs-2-weather__options">
+                                                <p class="tabs-2-weather__pressure">Давление: <span>255</span>мм.</p>
+                                                <p class="tabs-2-weather__temp">Влажность: <span>68</span> %</p>
+                                                <p class="tabs-2-weather__wind">Ветер: <span>35</span>м/с</p>
+                                                <p class="tabs-2-weather__main">Осадки: <span>дождь</span></p>
+                                            </div>
+                                        </div>
+                                        <!-- tabs-2-weather -->
+                                        
+                                    </a></li>
+                                    <li><a class="tabs-2__link" id="tabs-5-link" href="#tabs-5">
+                                        <div class="tabs-2__date">
+                                            <span class="tabs-2-menu__time2">07 августа</span>
+                                        </div>
+
+                                        <div class="tabs-2-weather">
+                                            <div class="tabs-1-weather__icon">
+                                                <img src="#" class="ow-icon"></img>
+                                                <p><span>+25</span> C</p>
+                                            </div>
+                                            <div class="tabs-2-weather__options">
+                                                <p class="tabs-1-weather__pressure">Давление: <span>255</span>мм.</p>
+                                                <p class="tabs-1-weather__temp">Влажность: <span>68</span> %</p>
+                                                <p class="tabs-1-weather__wind">Ветер: <span>35</span>м/с</p>
+                                                <p class="tabs-1-weather__main">Осадки: <span>дождь</span></p>
+                                            </div>
+                                        </div>
+                                        <!-- tabs-2-weather -->
+                                        
+                                    </a></li>
+                                    <li><a class="tabs-2__link" id="tabs-6-link" href="#tabs-6">
+                                        <div class="tabs-2__date">
+                                            <span class="tabs-2-menu__time3">08 августа</span>
+                                        </div>
+
+                                        <div class="tabs-2-weather">
+                                            <div class="tabs-2-weather__icon">
+                                                <img src="#" class="ow-icon"></img>
+                                                <p>+25 C</p>
+                                            </div>
+                                            <div class="tabs-2-weather__options">
+                                                <p class="tabs-3-weather__pressure">Давление: <span>255</span>мм.</p>
+                                                <p class="tabs-3-weather__temp">Влажность: <span>68</span> %</p>
+                                                <p class="tabs-3-weather__wind">Ветер: <span>35</span>м/с</p>
+                                                <p class="tabs-3-weather__main">Осадки: <span>дождь</span></p>
+                                            </div>
+                                        </div>
+                                        <!-- tabs-2-weather -->
+                                        
+                                    </a></li>
+                                </ul>
+
+                                <div id="tabs-0" class="active">
+                                    <p class="tabs-active-city">KHARKIV</p>
+                                    <table id="tabs-0_table">
+                                        <tr>
+                                            <th></th>
+                                            <td class="tabs-0_table_time1">04:00</td>
+                                            <td class="tabs-0_table_time2">08:00</td>
+                                            <td class="tabs-0_table_time3">12:00</td>
+                                            <td class="tabs-0_table_time4">16:00</td>
+                                            <td class="tabs-0_table_time5">20:00</td>
+                                            <td class="tabs-0_table_time6">24:00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Туманность</th>
+                                            <td class="tabs-0_table_icon1">
+                                                <img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon2"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon3"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon4"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon5"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon6"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Температура, С</th>
+                                            <td class="tabs-0_table_temp1">25</td>
+                                            <td class="tabs-0_table_temp2">24</td>
+                                            <td class="tabs-0_table_temp3">23</td>
+                                            <td class="tabs-0_table_temp4">25</td>
+                                            <td class="tabs-0_table_temp5">26</td>
+                                            <td class="tabs-0_table_temp6">22</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Ветер, м/с</th>
+                                            <td class="tabs-0_table_wind1">2</td>
+                                            <td class="tabs-0_table_wind2">3</td>
+                                            <td class="tabs-0_table_wind3">4</td>
+                                            <td class="tabs-0_table_wind4">11</td>
+                                            <td class="tabs-0_table_wind5">5</td>
+                                            <td class="tabs-0_table_wind6">2</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!--  -->
+                            </div>
+                            <div id="tabs-3">
+                                <div class="media-menu">
+                                    <ul class="tabs-2-menu">
+                                        <li><a class="tabs-2__link" id="tabs-7-link" href="#tabs-7">
+                                            <div class="tabs-2__date">
+                                                <span class="tabs-2-menu__time1">06 августа</span>
+                                            </div>
+                                            <div class="tabs-2-weather">
+                                                <div class="tabs-2-weather__icon">
+                                                    <img src="#" class="ow-icon"></img>
+                                                    <p><span>25</span> C</p>
+                                                    <p class="tabs-12-weather"></p>
+                                                </div>
+                                            </div>
+                                            <!-- tabs-2-weather -->
+                                            
+                                        </a></li>
+                                        <li><a class="tabs-2__link" id="tabs-8-link" href="#tabs-8">
+                                            <div class="tabs-2__date">
+                                                <span class="tabs-2-menu__time2">07 августа</span>
+                                            </div>
+    
+                                            <div class="tabs-2-weather">
+                                                <div class="tabs-1-weather__icon">
+                                                    <img src="#" class="ow-icon"></img>
+                                                    <p><span>25</span> C</p>
+                                                    <p class="tabs-11-weather"></p>
+                                                </div>
+                                            </div>
+                                            <!-- tabs-2-weather -->
+                                            
+                                        </a></li>
+                                        <li><a class="tabs-2__link" id="tabs-9-link" href="#tabs-9">
+                                            <div class="tabs-2__date">
+                                                <span class="tabs-2-menu__time3">08 августа</span>
+                                            </div>
+    
+                                            <div class="tabs-2-weather">
+                                                <div class="tabs-3-weather__icon">
+                                                    <img src="#" class="ow-icon"></img>
+                                                    <p><span>25</span> C</p>
+                                                    <p class="tabs-13-weather"></p>
+                                                </div>
+                                            </div>
+                                            <!-- tabs-2-weather -->
+                                            
+                                        </a></li>
+                                        <li><a class="tabs-2__link" id="tabs-10-link" href="#tabs-10">
+                                            <div class="tabs-2__date">
+                                                <span class="tabs-2-menu__time4">08 августа</span>
+                                            </div>
+    
+                                            <div class="tabs-2-weather">
+                                                <div class="tabs-4-weather__icon">
+                                                    <img src="#" class="ow-icon"></img>
+                                                    <p><span>25</span> C</p>
+                                                    <p class="tabs-14-weather"></p>
+                                                </div>
+                                            </div>
+                                            <!-- tabs-2-weather -->
+                                            
+                                        </a></li>
+                                        <li><a class="tabs-2__link" id="tabs-11-link" href="#tabs-11">
+                                            <div class="tabs-2__date">
+                                                <span class="tabs-2-menu__time5">08 августа</span>
+                                            </div>
+    
+                                            <div class="tabs-2-weather">
+                                                <div class="tabs-5-weather__icon">
+                                                    <img src="#" class="ow-icon"></img>
+                                                    <p><span>25</span> C</p>
+                                                    <p class="tabs-15-weather"></p>
+                                                </div>
+                                            </div>
+                                            <!-- tabs-2-weather -->
+                                            
+                                        </a></li>
+                                    </ul>
+                                </div>
+                                
+
+                                <div id="tabs-0" class="active">
+                                    <p class="tabs-active-city">KHARKIV</p>
+                                    <table id="tabs-0_table">
+                                        <tr>
+                                            <th></th>
+                                            <td class="tabs-0_table_time1">04:00</td>
+                                            <td class="tabs-0_table_time2">08:00</td>
+                                            <td class="tabs-0_table_time3">12:00</td>
+                                            <td class="tabs-0_table_time4">16:00</td>
+                                            <td class="tabs-0_table_time5">20:00</td>
+                                            <td class="tabs-0_table_time6">24:00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Туманность</th>
+                                            <td class="tabs-0_table_icon1">
+                                                <img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon2"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon3"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon4"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon5"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                            <td class="tabs-0_table_icon6"><img src="img/weather-icon/02d.png">
+                                                <div></div></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Температура, С</th>
+                                            <td class="tabs-0_table_temp1">25</td>
+                                            <td class="tabs-0_table_temp2">24</td>
+                                            <td class="tabs-0_table_temp3">23</td>
+                                            <td class="tabs-0_table_temp4">25</td>
+                                            <td class="tabs-0_table_temp5">26</td>
+                                            <td class="tabs-0_table_temp6">22</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Ветер, м/с</th>
+                                            <td class="tabs-0_table_wind1">2</td>
+                                            <td class="tabs-0_table_wind2">3</td>
+                                            <td class="tabs-0_table_wind3">4</td>
+                                            <td class="tabs-0_table_wind4">11</td>
+                                            <td class="tabs-0_table_wind5">5</td>
+                                            <td class="tabs-0_table_wind6">2</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- tabs-days -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="anotherСity">
+        <div class="container">
+            <div class="row justify-content-between anotherСity-box">
+                <div class="col-md anotherСity-box__item">
+                    <p class="anotherСity1">Lviv</p>
+                    <div class="anotherСity_desc1">
+                        <img src="" alt="icon">
+                        <p><span>+25</span> C</p>
+                    </div>
+                </div>
+                <div class="col-md anotherСity-box__item">
+                    <p class="anotherСity2">Lviv</p>
+                    <div class="anotherСity_desc2">
+                        <img src="" alt="icon">
+                        <p><span>+25</span> C</p>
+                    </div>
+                </div>
+                <div class="col-md anotherСity-box__item">
+                    <p class="anotherСity3">Lviv</p>
+                    <div class="anotherСity_desc3">
+                        <img src="" alt="icon">
+                        <p><span>+25</span> C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12">
+                    <ul class="footer-menu">
+                        <li><a href="https://openweathermap.org/" class="footer-menu__link" target="_blank">OpenWeather</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
