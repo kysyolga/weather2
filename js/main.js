@@ -27,7 +27,7 @@ $(document).ready(function() {
                     if(out > 0) {
                         $(".tabs-" + a +"-weather__icon p span").html("+" + out);
                     } else if (out < 0) {
-                        $(".tabs-" + a +"-weather__icon p span").html("-" + out);
+                        $(".tabs-" + a +"-weather__icon p span").html(out);
                     } else {
                         $(".tabs-" + a +"-weather__icon p span").html(out);
                     }
