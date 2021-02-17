@@ -53,7 +53,7 @@ $(document).ready(function() {
                         if(out > 0) {
                             $(".tabs-0_table_temp"+i).html("+" + out);
                         } else if (out < 0) {
-                            $(".tabs-0_table_temp"+i).html("-" + out);
+                            $(".tabs-0_table_temp"+i).html(out);
                         } else {
                             $(".tabs-0_table_temp"+i).html(out);
                         }
@@ -145,7 +145,7 @@ $(document).ready(function() {
                     if(out > 0) {
                         $(".anotherСity_desc"+i+" p span").html("+" + out);
                     } else if (out < 0) {
-                        $(".anotherСity_desc"+i+" p span").html("-" + out);
+                        $(".anotherСity_desc"+i+" p span").html( out);
                     } else {
                         $(".anotherСity_desc"+i+" p span").html(out);
                     }
